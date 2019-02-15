@@ -20,6 +20,7 @@
   },
   "license": "GPLv3",
   "dependencies": {
-    "node-hid": "^0.4.0"
+    "node-hid": "^0.4.0",
+    "say": "^0.15.0"
   }
 }

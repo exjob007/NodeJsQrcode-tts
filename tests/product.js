@@ -1,6 +1,7 @@
 var usbScanner = require("../usbscanner").usbScanner;
 var getDevices = require("../usbscanner").getDevices;
-
+var say = require('say')
+//say.speak('hello')
 //get array of attached HID devices
 var connectedHidDevices = getDevices();
 
@@ -31,20 +32,12 @@ var scanner = new usbScanner({vendorId:59473});
 //scanner emits a data event once a barcode has been read and parsed
 scanner.on("data", code => {
   console.log("recieved code : " + code);
+  say.speak(code)
 });
 
-setTimeout(() => {
+/*setTimeout(() => {
   console.log("Scanner 1 stopping...");
   scanner.stopScanning();
   console.log("Starting scanner 2 via device path");
-  var scanner2 = new usbScanner({ devicePath: "0001:0008:00" });
-
-  scanner2.on("data", code => {
-    console.log("recieved code from device 2 : " + code);
-  });
-
-  setTimeout(() => {
-    console.log("Stoppping scanner 2");
-    scanner2.stopScanning();
-  }, 15000);
-}, 15000);
+ 
+}, 15000);*/
