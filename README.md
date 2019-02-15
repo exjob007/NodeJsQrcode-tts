@@ -1,3 +1,7 @@
+yarn install
+node >>
+
+REF>>>
 # node-usb-barcode-scanner
 Package to help work with USB HID based barcode scanners in nodejs on Linux and OSX.
 
